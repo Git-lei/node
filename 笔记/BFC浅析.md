@@ -40,7 +40,7 @@
 >
 > 主要块级盒将包含后代元素生成的盒以及生成的内容。它也是可以使用([定位方案 positioning scheme](https://link.jianshu.com?t=https://developer.mozilla.org/en-US/docs/CSS/Positioning_scheme))的盒。
 >
-> ![venn_blocks](E:\笔记\images\venn_blocks.png)
+> ![venn_blocks](E:..\images\venn_blocks.png)
 >
 > 一个块级盒可能也是一个块容器盒。块容器盒(*block container box)* 只包含其它块级盒，或生成一个行内[格式化上下文(inline formatting context)](https://link.jianshu.com?t=https://developer.mozilla.org/en-US/docs/CSS/Inline_formatting_context)，由此只包含行内盒。注意块级盒与块容器盒概念不同。 前者描述元素跟它的父元素与兄弟元素之间的表现，后者描述元素跟它的后代之间的影响。有些块级盒，比如表格，不是块容器盒。相反，一些块容器盒，比如非替换行内块及非替换表格单元格，不是块级盒。
 >
@@ -100,7 +100,7 @@
 
 根据BFC的特性，同一个BFC下的两个相邻的盒子会出现垂直margin重叠的问题，这个问题会影响我们对页面布局的控制，通常我们可以为其中一个盒子添加一个父元素，并使其触发BFC，即可解决这个问题：
 
-![4655331-e826e7f44840bc9b](E:\笔记\images\4655331-e826e7f44840bc9b.webp)
+![4655331-e826e7f44840bc9b](..\images\4655331-e826e7f44840bc9b.webp)
 
 
 
@@ -112,7 +112,9 @@ margin重叠
 
 比如下面这个例子，绿色盒子会因为浮动遮盖住红色的盒子，但由于两个盒子都在同一个BFC（body元素）下，根据BFC特性，红色盒子会与包含块相接，此时只要让红色盒子触发BFC，我们为红色盒子添加一个触发BFC的条件overflow:hidden，此时红色盒子由于BFC的特性隔离开绿色，这样我们就可以通过float元素的方式实现两栏布局。
 
-![4655331-0bd6c330da5d0fa7](E:\笔记\images\4655331-0bd6c330da5d0fa7.webp)
+![4655331-0bd6c330da5d0fa7](..\images\4655331-0bd6c330da5d0fa7.webp)
+
+
 
 布局问题
 
@@ -124,7 +126,7 @@ margin重叠
 
 如下面的例子，`div.parent`包含了两个`div.child`，而两个div由于赋予了`float:left`使其浮动，导致了`div.parent`高度的坍塌，此时我们给`div.parent`添加一个`overflow:hidden`属性值，使`div.parent`触发BFC，由于BFC下的盒子会包含浮动元素的高度，因此盒子就被撑了起来，高度塌陷的问题也就得到了解决。
 
-![4655331-c23159f5bbe3408f](E:\笔记\images\4655331-c23159f5bbe3408f.webp)
+![4655331-c23159f5bbe3408f](images\4655331-c23159f5bbe3408f.webp)
 
 
 
